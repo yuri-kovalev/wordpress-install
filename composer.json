@@ -1,0 +1,57 @@
+{
+  "authors": [
+    {
+      "name": "Yuri Kovalev",
+      "email": "im@yuri-kovalev.ru",
+      "homepage": "http://yuri-kovalev.ru"
+    }
+  ],
+  "keywords": [
+    "wordpress", "stack", "composer", "wp"
+  ],
+  "repositories":[
+    {
+      "type": "composer",
+      "url": "https://wpackagist.org"
+    }
+  ],
+  "config": {
+    "secure-http": false
+  },
+  "require": {
+    "php": ">=5.6",
+    "oscarotero/env": "^1.0",
+    "vlucas/phpdotenv": "^2.0.1",
+    "johnpbloch/wordpress": "*",
+    "wpackagist-plugin/wp-super-cache": "*",
+    "wpackagist-plugin/advanced-custom-fields": "*",
+    "wpackagist-plugin/custom-post-type-ui": "*",
+    "wpackagist-plugin/post-type-archive-links": "*",
+    "wpackagist-plugin/table-of-contents-plus": "*",
+    "wpackagist-plugin/wordpress-seo": "*",
+    "wpackagist-plugin/user-role-editor": "*",
+    "wpackagist-plugin/wordpress-social-login": "*",
+    "wpackagist-plugin/wp-lightbox-2": "*",
+    "wpackagist-plugin/rustolat": "*",
+    "wpackagist-plugin/bbpress": "*",
+    "wpackagist-plugin/disable-xml-rpc": "*",
+    "wpackagist-plugin/disable-emojis": "*",
+    "wpackagist-plugin/limit-login-attempts": "*",
+    "wpackagist-plugin/rename-wp-login": "*",
+    "wpackagist-plugin/taxonomy-terms-order": "*",
+    "wpackagist-plugin/backwpup": "*",
+    "wpackagist-plugin/wp-smushit": "*",
+    "wpackagist-plugin/wplang-lite": "*"
+  },
+  "extra": {
+    "wordpress-install-dir": "app/web/core",
+    "installer-paths": {
+      "app/content/plugins/{$name}/": ["vendor:wpackagist-plugin"]
+    }
+  },
+  "scripts": {
+    "post-install-cmd": [
+      "php -r \"copy('.env.example', 'app/web/.env');\""
+    ]
+  }
+}
