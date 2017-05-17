@@ -1,7 +1,7 @@
 # Wordpress install
 Установка [Wordpress](https://wpackagist.org) с помощью [Composer](https://getcomposer.org)
 
-Версия сборки: ```1.0.0```
+Версия сборки: ```1.0.1```
 
 # Переменные
 Все переменные используемые в этой документации
