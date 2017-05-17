@@ -1,13 +1,19 @@
 {
+
+  "name": "u-kovalev/wordpress-install",
+  "type": "project",
+  "description": "The WordPress installer",
+  "keywords": [
+    "wordpress", "composer", "wp"
+  ],
+  "homepage": "https://github.com/u-kovalev/wordpress-install",
+  "license": "MIT",
   "authors": [
     {
       "name": "Yuri Kovalev",
       "email": "im@yuri-kovalev.ru",
       "homepage": "http://yuri-kovalev.ru"
     }
-  ],
-  "keywords": [
-    "wordpress", "stack", "composer", "wp"
   ],
   "repositories":[
     {
