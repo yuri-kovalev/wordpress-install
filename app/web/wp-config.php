@@ -1,7 +1,16 @@
 <?php
 
 /** @var string Directory containing all of the site's files */
-$root_dir = dirname(__DIR__);
+$root_dir = dirname(__FILE__);
+
+/**
+ * Require autoload vendors
+ */
+if (file_exists($root_dir . '/../../vendor/autoload.php')) {
+    require_once($root_dir . '/../../vendor/autoload.php');
+} else {
+    echo 'Not found vendor/autoload.php';exit;
+}
 
 /**
  * Expose global env() function from oscarotero/env
@@ -23,7 +32,7 @@ if (file_exists($root_dir . '/.env')) {
  * Values: develop, production
  */
 define('WP_ENV', env('WP_ENV') ?: 'production');
-$env_config = __DIR__ . '/environments/' . WP_ENV . '.php';
+$env_config = $root_dir . '/environments/' . WP_ENV . '.php';
 if (file_exists($env_config)) {
     require_once $env_config;
 }
@@ -72,8 +81,8 @@ define( 'WPLANG', '' );
 /**
  * Load a Memcached config if we have one
  */
-if ( file_exists( dirname( __FILE__ ) . '/memcached.php' ) )
-    $memcached_servers = include( dirname( __FILE__ ) . '/memcached.php' );
+if ( file_exists( $root_dir . '/memcached.php' ) )
+    $memcached_servers = include( $root_dir . '/memcached.php' );
 
 /**
  * Disable ftp config in admin panel
